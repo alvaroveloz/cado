@@ -17,12 +17,22 @@ export const Pagination = ({ currentPage, updatePage, pages }) => {
 
   return (
     <div className='pagination'>
-      <button onClick={onClickPrevious} disabled={currentPage === 1}>
-        Previous
+      <button
+        className='icon-pagination'
+        onClick={onClickPrevious}
+        disabled={currentPage === 1}
+      >
+        <i className='fa-solid fa-caret-left'></i>
       </button>
-      <p>Page x of y</p>
-      <button onClick={onClickNext} disabled={ currentPage === pages}>
-        Next
+      <p className='text-pagination'>
+        Page {currentPage} of {pages}
+      </p>
+      <button
+        className='icon-pagination'
+        onClick={onClickNext}
+        disabled={currentPage === pages}
+      >
+        <i className='fa-solid fa-caret-right'></i>
       </button>
     </div>
   );

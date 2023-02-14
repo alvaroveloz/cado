@@ -1,7 +1,14 @@
-export const ComicApi = async (currentPage) => {
-  const URL = `https://rickandmortyapi.com/api/character/?page=${currentPage}`;
+export const ComicApi = async (currentPage, name='') => {
+
+  const PATH_URL = new URL(`https://rickandmortyapi.com/api/character`);
+
+  PATH_URL.searchParams.set('page', currentPage);
+  if (name) { 
+    PATH_URL.searchParams.set('name', name);
+  }
+
   try {
-    const response = await fetch(URL);
+    const response = await fetch(PATH_URL.toString());
     const json = await response.json();
     const { info, results } = json;
 
@@ -14,6 +21,8 @@ export const ComicApi = async (currentPage) => {
       Image: res.image,
       Episode: res.episode,
     }));
+
+    console.log(info, resultsMapped)
 
     return {
         info,

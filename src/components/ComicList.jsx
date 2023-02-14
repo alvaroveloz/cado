@@ -11,6 +11,9 @@ export const ComicList = ( { characters } ) => {
     return (arrEpisodes.length > 4 ) ? `${arrEpisodes}...` : arrEpisodes
   }
 
+  const isActive = (status) => {
+    return status === 'Alive' ? '#deecdc' : '#e06f64';
+  }
   
   return (
     <div className='page'>
@@ -18,15 +21,27 @@ export const ComicList = ( { characters } ) => {
         characters.map((character) => (
           <div className='comics' key={character.Id}>
             <div className='comic-picture'>
-              <img src={`${character.Image}`} alt={`${character.Name}`} />
+              <img
+                src={`${character.Image}`}
+                alt={`${character.Name}`}
+                width={150}
+              />
             </div>
             <div className='comic-description'>
-              <p>{character.Name}</p>
-              <p>{character.Gender}</p>
-              <p>{character.Species}</p>
-              <p>{shortEpisode(character.Episode)}</p>
+              <div>
+                <strong>{character.Name}</strong>
+              </div>
+              <div>Gender: {character.Gender}</div>
+              <div>Species: {character.Species}</div>
+              <div>Episodes: {shortEpisode(character.Episode)}</div>
               {character.Status === 'unknown' ? null : (
-                <button> {character.Status}</button>
+                <button
+                  className='status'
+                  style={{ backgroundColor: isActive(character.Status) }}
+                >
+                  {' '}
+                  {character.Status}
+                </button>
               )}
             </div>
           </div>
