@@ -18,14 +18,18 @@ export const SearchForm = ({ onSearch }) => {
   };
   return (
     <form onSubmit={onSubmitSearch}>
-      <input
-        onChange={onChangeSearch}
-        name='search'
-        type='text'
-        placeholder='Buscar por nombre o estatus'
-        value={formValues.name}
-      />
-      <button> Filtrar</button>
+      <div className='searchbar'>
+        <i className='fas fa-search'></i>
+
+        <input
+          onChange={onChangeSearch}
+          name='search'
+          type='text'
+          placeholder='Buscar por nombre o estatus'
+          value={formValues.name}
+        />
+        <button> Filtrar</button>
+      </div>
     </form>
   );
 };

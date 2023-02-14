@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     getData();
-  }, [currentPage]);
+  }, [currentPage, name]);
   
 
   return (
