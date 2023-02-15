@@ -22,7 +22,7 @@ export const ComicApi = async (currentPage, name='') => {
       Episode: res.episode,
     }));
 
-    console.log(info, resultsMapped)
+    
 
     return {
         info,
