@@ -16,27 +16,33 @@ export const ComicList = ( { characters } ) => {
   }
   
   return (
-    <div className='page'>
+    <div className='p-4 max-w-7xl grid sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-8'>
       {hasResults &&
         characters.map((character) => (
-          <div className='comics' key={character.Id}>
-            <div className='comic-picture'>
+          <div
+            className='grid grid-cols-2 bg-gray-200 border-2 border-gray-300 rounded-xl'
+            key={character.Id}
+          >
+            <div>
               <img
+                className=' border-gray-300 rounded-xl inset-0 h-full w-full object-cover object-center opacity-75 hover:opacity-100'
                 src={`${character.Image}`}
                 alt={`${character.Name}`}
                 width={150}
               />
             </div>
-            <div className='comic-description'>
-              <div>
+            <div className='m-4 grid content-center '>
+              <div className='text-lg font-medium'>
                 <strong>{character.Name}</strong>
               </div>
-              <div>Gender: {character.Gender}</div>
-              <div>Species: {character.Species}</div>
-              <div>Episodes: {shortEpisode(character.Episode)}</div>
+              <div className='text-lg'>Gender: {character.Gender}</div>
+              <div className='text-xs'>Species: {character.Species}</div>
+              <div className='text-xs mb-2'>
+                Episodes: {shortEpisode(character.Episode)}
+              </div>
               {character.Status === 'unknown' ? null : (
                 <button
-                  className='status'
+                  className='status w-3/4 py-1 rounded'
                   style={{ backgroundColor: isActive(character.Status) }}
                 >
                   {' '}
