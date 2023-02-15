@@ -31,7 +31,7 @@ function App() {
   
 
   return (
-    <div className='grid place-items-center min-h-screen bg-black '>
+    <div className='grid place-items-center min-h-screen bg-black'>
       <SearchForm onSearch={handleSearch} />
       <ComicList characters={results} />
       <Pagination

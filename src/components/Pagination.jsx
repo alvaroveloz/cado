@@ -16,19 +16,19 @@ export const Pagination = ({ currentPage, updatePage, pages }) => {
   };
 
   return (
-    <div className='pagination'>
+    <div className='pagination flex items-center p-2 bg-gray-400 rounded-lg m-8'>
       <button
-        className='icon-pagination'
+        className='icon-pagination text-yellow text-3xl w-16'
         onClick={onClickPrevious}
         disabled={currentPage === 1}
       >
         <i className='fa-solid fa-caret-left'></i>
       </button>
-      <p className='text-pagination'>
+      <p className='text-pagination font-bold'>
         Page {currentPage} of {pages}
       </p>
       <button
-        className='icon-pagination'
+        className='icon-pagination text-yellow text-3xl w-16'
         onClick={onClickNext}
         disabled={currentPage === pages}
       >

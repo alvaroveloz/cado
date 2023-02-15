@@ -17,7 +17,7 @@ export const SearchForm = ({ onSearch }) => {
     onSearch(formValues.search);
   };
   return (
-    <div className='flex justify-center mb-8 '>
+    <div className='flex m-10'>
       <form onSubmit={onSubmitSearch}>
         <div className='relative text-gray-600 focus-within:text-gray-400'>
           <span className='absolute inset-y-0 left-0 flex items-center pl-2'>
@@ -44,7 +44,7 @@ export const SearchForm = ({ onSearch }) => {
             type='text'
             placeholder='Buscar por nombre o estatus...'
             value={formValues.name}
-            className='py-2 w-64 text-sm text-white rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900'
+            className='py-2 w-96 text-sm text-white rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900'
             autoComplete='off'
           />
         </div>

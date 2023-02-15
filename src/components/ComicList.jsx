@@ -16,11 +16,11 @@ export const ComicList = ( { characters } ) => {
   }
   
   return (
-    <div className='p-4 max-w-7xl grid sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-8'>
+    <div className='max-w-7xl grid sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-8'>
       {hasResults &&
         characters.map((character) => (
           <div
-            className='grid grid-cols-2 bg-gray-200 border-2 border-gray-300 rounded-xl'
+            className='grid grid-cols-2 bg-white border-2 border-gray-300 rounded-xl'
             key={character.Id}
           >
             <div>
